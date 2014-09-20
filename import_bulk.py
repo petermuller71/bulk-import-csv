@@ -7,7 +7,7 @@ start = time.time()
 
 conn = sqlite3.connect("pc.sqlite")
 curs = conn.cursor()
-curs.execute("CREATE TABLE IF NOT EXISTS PCFC (id TEXT, type INTEGER, term TEXT);")
+curs.execute("CREATE TABLE IF NOT EXISTS PCFC (id INTEGER, type TEXT, term TEXT);")
 
 # function to import csv and do bulk insert
 def import_csv( csvfile ):
