@@ -1,8 +1,6 @@
 bulk-import-csv
 ===============
 
-bulk import large CSV into SQL(ite) 
-
 This code can be used to read a CSV file and import the contents in a database (in this example sqlite).
 
 The example csv file has 3 columns and | as a seperator
