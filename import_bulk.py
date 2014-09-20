@@ -2,9 +2,7 @@ import csv, sqlite3, time
 
 start = time.time()
 
-
 # create SQLITE file and create table
-
 conn = sqlite3.connect("pc.sqlite")
 curs = conn.cursor()
 curs.execute("CREATE TABLE IF NOT EXISTS PCFC (id INTEGER, type TEXT, term TEXT);")
@@ -19,7 +17,6 @@ def import_csv( csvfile ):
     # ii is now set at 5. So 5 csv-rows are read and inserted
     # on my computer *3000 lines* gives fastest result
     # so... for huge csv files... change ii to other number
-
     ii = 5
 
     reader = csv.reader(open(csvfile, 'r'), delimiter='|')
@@ -38,7 +35,7 @@ def import_csv( csvfile ):
     if len(to_db) != 0:
         curs.executemany("INSERT INTO PCFC VALUES(?, ?, ?)", to_db)
         conn.commit()
-
+        
     # end of function import_csv
 
 
